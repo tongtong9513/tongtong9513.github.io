@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>cliper</title>
+
+  <link rel="stylesheet" type="text/css" href="js/jquery.fullPage.css" />
+  <link rel="stylesheet" type="text/css" href="main.css" />
+  <link rel="stylesheet" type="text/css" href="jquery.css" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.fullPage.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#fullpage').fullpage({
+        sectionsColor: ['#bde4e5', '#ffc526', '#ff4f7c', '#8743eb', '#f3f3f3', '#edf7f8', '#ff658d', '#ff658d', '#edf7f8'],
+        anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage', 'pageplus', '5thpage', '6thpage'],
+      });
+      //비디오
+      $('.btn2').click(function() {
+        $('.video').slideToggle("slow");
+        $('.video').get(0).play();
+        $('.btn1').fadeOut("slow");
+        $('#out').show("slow");
+        $('.btn2').fadeOut("slow");
+        $('.btn2txt').fadeOut("slow");
+      });
+      $('#out').click(function() {
+        $('.video').slideToggle("slow");
+          $('.video').get(0).pause();
+        $('.btn2').fadeIn("slow");
+        $('.btn2txt').fadeIn("slow");
+      });
+      $('#out').click(function() {
+          $('#out').slideToggle("slow");
+      });
+      $('#videobtn').hover(
+        function() {
+          $('.btn1 > img').animate({
+            height: '544px',
+            width: '420px'
+          });
+        },
+        function() {
+          $('.btn1 > img').animate({
+            height: '524px',
+            width: '400px'
+          });
+        });
+    });
+  </script>
+
+  <script>
+    $(document).ready(function() {
+      var listnum = 0;
+      $('#btn1').click(function() {
+        if (listnum == -1) {
+          $('#btn1').css('display', 'none');
+        } else {
+          $('#btn2').css('display', 'block');
+        }
+        if (listnum > -2) {
+          listnum--;
+        }
+        $('.listwrap').stop().animate({
+          'left': (-422 * listnum) + 'px'
+        })
+      })
+
+      $('#btn2').click(function() {
+        if (listnum == 1) {
+          $('#btn2').css('display', 'none');
+        } else {
+          $('#btn1').css('display', 'block');
+        }
+        if (listnum < 2) {
+          listnum++;
+        }
+        $('.listwrap').stop().animate({
+          'left': (-422 * listnum) + 'px'
+        })
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <div id="test"></div>
+  <div id="fullpage">
+    <div class="section" id="section0">
+      <div class="nav">
+        <ul>
+          <li><a href="#section0" class="active"></a></li>
+          <li><a href="#section1"></a></li>
+          <li><a href="#section2"></a></li>
+          <li><a href="#section25"></a></li>
+          <li><a href="#section3"></a></li>
+          <li><a href="#section4"></a></li>
+          <li><a href="#section5"></a></li>
+        </ul>
+      </div>
+      <div id="sectione">
+        <img src="imgs/page1/txt1.png" alt="언제어디서나 태어나지 않은 너와함께" />
+        <div class="btn2"> <a class="btn2_c"> click </a> </div>
+
+        <video controls loop poster="imgs/cover.png"  class="video">
+          <source src="imgs/cliper.mov" type="video/mp4"/>
+                </video>
+        <div id="videobtn">
+          <div class="btn2"> <a class="btn2_c"> 동영상 보기 </a> </div>
+        </div>
+        <div id="out">
+          <a href="#" class="btn3"><img src="imgs/false.png" alt="아웃"></a>
+        </div>
+        <div id="down"><a><img src="imgs/godown.png" id="downimg"></a></div>
+      </div>
+    </div>
+    <div class="section" id="section1">
+      <div class="nav" id="nav2">
+        <ul>
+          <li><a href="#section0"></a></li>
+          <li><a href="#section1" class="active"></a></li>
+          <li><a href="#section2"></a></li>
+          <li><a href="#section25"></a></li>
+          <li><a href="#section3"></a></li>
+          <li><a href="#section4"></a></li>
+          <li><a href="#section5"></a></li>
+        </ul>
+      </div>
+      <div class="nav" id="nav3">
+        <ul>
+          <li><a href="#section0"></a></li>
+          <li><a href="#section1"></a></li>
+          <li><a href="#section2" class="active"></a></li>
+          <li><a href="#section25"></a></li>
+          <li><a href="#section3"></a></li>
+          <li><a href="#section4"></a></li>
+          <li><a href="#section5"></a></li>
+        </ul>
+      </div>
+      <div class="nav" id="nav4">
+        <ul>
+          <li><a href="#section0"></a></li>
+          <li><a href="#section1"></a></li>
+          <li><a href="#section2"></a></li>
+          <li><a href="#section25" class="active"></a></li>
+          <li><a href="#section3"></a></li>
+          <li><a href="#section4"></a></li>
+          <li><a href="#section5"></a></li>
+        </ul>
+      </div>
+      <div class="nav" id="nav5">
+        <ul>
+          <li><a href="#section0"></a></li>
+          <li><a href="#section1"></a></li>
+          <li><a href="#section2"></a></li>
+          <li><a href="#section25"></a></li>
+          <li><a href="#section3" class="active"></a></li>
+          <li><a href="#section4"></a></li>
+          <li><a href="#section5"></a></li>
+        </ul>
+      </div>
+      <div class="nav" id="nav6">
+        <ul>
+          <li><a href="#section0"></a></li>
+          <li><a href="#section1"></a></li>
+          <li><a href="#section2"></a></li>
+          <li><a href="#section25"></a></li>
+          <li><a href="#section3"></a></li>
+          <li><a href="#section4" class="active"></a></li>
+          <li><a href="#section5"></a></li>
+        </ul>
+      </div>
+      <div class="nav" id="nav7">
+        <ul>
+          <li><a href="#section0"></a></li>
+          <li><a href="#section1"></a></li>
+          <li><a href="#section2"></a></li>
+          <li><a href="#section25"></a></li>
+          <li><a href="#section3"></a></li>
+          <li><a href="#section4"></a></li>
+          <li><a href="#section5" class="active"></a></li>
+        </ul>
+      </div>
+      <div class="pol">
+        <div class="polwrap">
+          <a id="num1">
+            <span id="poltext1">사람의 기억회로는 임신 12주차 때 형성됩니다.<br />따라서 이 때부터 태교에 참여해야 태아와의 관계성 형성에 도움이 됩니다.</span><img src="imgs/mouseon.png" alt="" id="mouseimg"></a>
+          <a id="num2"><span id="poltext2">지능을 결정하는 시냅스의 수나 정보 전달의 종류는<br />          태아의 뇌가 형성되는 시기에 태내 환경의 영향을 받습니다.          </span></a>
+          <a id="num3"><span id="poltext3">태아는 뱃속에서부터 산모와 함께 여러 감정을 느낄 수 있어<br />
+          태교를 통한 다양한 정서 발달이 가능합니다.</span></a>
+          <a id="num4"><span id="poltext4">남편이 태교에 참여함으로써 <br />산모와 태아는 정서적으로 편안한 상태가 됩니다.</span></a>
+          <a id="num5"><span id="poltext5">태교를 통해 산모와 남편, 그리고 태아가
+          가족으로써의 유대감을 갖게 됩니다</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="section" id="section2">
+
+      <div class="sec2w">
+      </div>
+    </div>
+
+
+    <div class="section" id="section25">
+      <div class="slide" id="sec25_1">
+      </div>
+      <div class="slide" id="sec25_2">
+      </div>
+      <div class="slide" id="sec25_3">
+      </div>
+    </div>
+
+    <div class="section" id="section3">
+      <div id="section3w">
+        <div id="bgblack"></div>
+        <div id="mombg">
+          <a href="#">
+            <div id="mombtn" class="parentsbtn"><span>&#8592;</span>엄마의 고민해결</div>
+          </a>
+        </div>
+
+        <div id="dadbg">
+          <a href="#">
+            <div id="dadbtn" class="parentsbtn">아빠의 고민해결 <span>&#8594;</span></div>
+          </a>
+        </div>
+
+        <div id="hide">
+          <a href="#">엄마 아빠의 고민?!</a>
+          <div id="hidemom">
+
+
+          </div>
+          <div id="hidedad">
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="section4">
+      <img src="imgs/5txt.png" alt="">
+    </div>
+
+    <div class="section" id="section5">
+      <div id="phoneall">
+        <div class="phonewrap">
+          <ul class="listwrap">
+            <li>
+              <img src="imgs/phoneimg/app1.jpg" alt="app-img" />
+            </li>
+            <li>
+              <img src="imgs/phoneimg/app5.jpg" alt="app-img" />
+            </li>
+            <li>
+              <img src="imgs/phoneimg/app2.jpg" alt="app-img" />
+            </li>
+            <li>
+              <img src="imgs/phoneimg/app4.jpg" alt="app-img" />
+            </li>
+            <li>
+              <img src="imgs/phoneimg/app3.jpg" alt="app-img" />
+            </li>
+          </ul>
+          <div class="ww"><a id="btn1">prev</a>
+            <a id="btn2">next</a>
+            <img id="phone" src="imgs/phone.png" alt=""></div>
+        </div>
+      </div>
+
+    </div>
+    <div class="section" id="section6">
+      <div class="slide" id="sec6_1">
+      </div>
+      <div class="slide" id="sec6_2">
+      </div>
+    </div>
+
+
+    <script>
+      var dad = $('#dadbg > img,#dadbg > a');
+      $(document).ready(function() {
+        $('#dadbg > a').click(function() {
+          $('#mombg,#bgblack,#mombg > a').css('opacity', 0);
+          $('#dadbg > img,#dadbg > a').css('opacity', 0);
+          $('#hidemombtn,#hidemom').css('opacity', 0);
+          $('#hide,#hidedad').css('opacity', 1);
+        });
+        $('#hide > a').click(function() {
+          $('#hide,#hidemom').css('opacity', 0);
+          $('#mombg,#bgblack').css('opacity', 1);
+          $('#dadbg > img,#dadbg > a').css('opacity', 1);
+        });
+      });
+    </script>
+    <script>
+      var mom = $('#mombg > img,#mombg > a');
+      $(document).ready(function() {
+        $('#mombg > a').click(function() {
+          $('#dadbg,#bgblack,#hidedad').css('opacity', 0);
+          $('#hidedadbtn').css('opacity', 0);
+          $('#mombg > img,#mombg > a,#hidedadbtn,#hidedad').css('opacity', 0);
+          $('#hide,#hidemom').css('opacity', 1);
+        });
+        $('#hide > a').click(function() {
+          $('#hide').css('opacity', 0);
+          $('#dadbg,#bgblack').css('opacity', 1);
+          $('#mombg > img,#mombg > a').css('opacity', 1);
+        });
+      });
+
+
+      var poltxt = $('#mouseimg');
+      $(document).ready(function() {
+        $('.polwrap a').hover(function() {
+          $('#mouseimg').css('display', 'none');
+        });
+        $('.polwrap a').mouseout(function() {
+          $('#mouseimg').css('display', 'block');
+        });
+      });
+      var out = $('#out');
+      $(document).ready(function() {
+        $('#out').click(function() {
+        });
+      });
+    </script>
+</body>
+
+</html>
