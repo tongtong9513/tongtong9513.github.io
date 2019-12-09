@@ -4190,3 +4190,7 @@ body.noscroll {
   nav ul a:hover {
     color: #14295B;
   }
+  .project-content>div .project-details .product .rows img {
+    width: 50%;
+    height: auto;
+  }
